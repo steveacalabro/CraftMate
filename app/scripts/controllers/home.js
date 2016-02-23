@@ -8,5 +8,8 @@
  * Controller of the craftMateApp
  */
 angular.module('craftMateApp')
-.controller('HomeCtrl', function () {
+.controller('HomeCtrl', function ($scope) {
+	$scope.goToBookmark = function(index) {
+		console.log("Bookmark Clicked" + index);
+	}
 });

@@ -1,0 +1,82 @@
+.homePage {
+	.craftingTable {
+		margin-left: auto;
+    	margin-right: auto;
+		width: 215px;
+		height: 110px;
+		background: #c6c6c6;
+		border: 2px solid;
+		border-color: #DBDBDB #5B5B5B #5B5B5B #DBDBDB;
+    	padding: 6px;
+
+    	.recipeBox {
+    		display: inline-block;
+
+    		.recipeRow {
+    			display: block;
+
+    			.recipeSlot {
+    				position: relative;
+				    display: inline-block;
+				    background: #8B8B8B;
+				    border: 2px solid;
+				    border-color: #373737 #FFF #FFF #373737;
+				    width: 32px;
+				    height: 32px;
+				    vertical-align: bottom;
+				}
+
+				.recipeSlot:nth-of-type(2) {
+					margin-left: -4px;
+					margin-right: -4px;
+				}
+    		}
+    	}
+
+    	.arrow {
+    		background: url('/images/arrow.png') no-repeat;
+			width: 32px;
+			height: 63px;
+    		display: inline-block;
+    	}
+
+    	.output {
+    		position: relative;
+		    display: inline-block;
+		    background: #8B8B8B;
+		    border: 2px solid;
+		    border-color: #373737 #FFF #FFF #373737;
+		    width: 32px;
+		    height: 32px;
+		    vertical-align: bottom;
+		    padding: 8px;
+		    margin-bottom: 27px;
+
+		    .stackSize {
+		    	position: absolute;
+			    right: 5px;
+			    bottom: 5px;
+			    font-family: Minecraft;
+			    color: #FFF;
+			    text-shadow: 2px 2px 0 #3F3F3F;
+			    filter: dropshadow(color=#3F3F3F,offx=2,offy=2);
+			    z-index: 2;
+		    }
+    	}
+
+    	.item {
+    		background: url('/images/invSprite.png');
+    		width: 32px;
+    		height: 32px;
+    	}
+	}
+
+	md-autocomplete {
+		margin-top: 30px;
+	}
+
+	md-tabs {
+		margin-top: 30px;
+		background: white;
+	}
+}
