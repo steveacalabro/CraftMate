@@ -1,1 +1,0 @@
-electron-packager . CraftMate --platform=all --arch=all --version=0.36.8 --icon=icon.icns --out=Staging
