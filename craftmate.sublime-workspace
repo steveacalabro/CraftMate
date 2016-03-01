@@ -4,12 +4,44 @@
 		"selected_items":
 		[
 			[
-				"datasour",
-				"datasources"
+				"reci",
+				"recipe"
 			],
 			[
 				"re",
-				"required"
+				"recipeMap"
+			],
+			[
+				"rec",
+				"recipe"
+			],
+			[
+				"cn",
+				"console"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"back",
+				"background-image"
+			],
+			[
+				"inel",
+				"inline-block"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"ang",
+				"angular-ui-router"
+			],
+			[
+				"datasour",
+				"datasources"
 			],
 			[
 				"true",
@@ -80,10 +112,33 @@
 	},
 	"expanded_folders":
 	[
-		"/home/midevilworm/_git/CraftMate"
+		"/home/midevilworm/_git/CraftMate",
+		"/home/midevilworm/_git/CraftMate/webApp",
+		"/home/midevilworm/_git/CraftMate/webApp/app"
 	],
 	"file_history":
 	[
+		"/home/midevilworm/_git/CraftMate/webApp/app/recipeList.json",
+		"/home/midevilworm/_git/CraftMate/main.js",
+		"/home/midevilworm/_git/CraftMate/package.json",
+		"/home/midevilworm/_git/CraftMate/electronBuild.sh",
+		"/home/midevilworm/_git/CraftMate/webApp/app/styles/mainStyleFixed.css",
+		"/home/midevilworm/_git/CraftMate/webApp/app/index.html",
+		"/home/midevilworm/_git/CraftMate/webApp/less/main.less",
+		"/home/midevilworm/_git/CraftMate/webApp/less/pages/home.less",
+		"/home/midevilworm/_git/CraftMate/less/main.less",
+		"/home/midevilworm/_git/CraftMate/less/pages/home.less",
+		"/home/midevilworm/_git/CraftMate/app/scripts/controllers/home.js",
+		"/home/midevilworm/_git/CraftMate/app/views/home.html",
+		"/home/midevilworm/_git/CraftMate/app/views/main.html",
+		"/home/midevilworm/_git/CraftMate/app/index.html",
+		"/home/midevilworm/_git/CraftMate/app/recipeList.json",
+		"/home/midevilworm/_git/CraftMate/bower.json",
+		"/home/midevilworm/_git/CraftMate/app/scripts/app.js",
+		"/home/midevilworm/_git/CraftMate/app/scripts/controllers/main.js",
+		"/home/midevilworm/_git/CraftMate/Gruntfile.js",
+		"/home/midevilworm/_git/CraftMate/.gitignore",
+		"/home/midevilworm/_git/CraftMate/.bowerrc",
 		"/home/midevilworm/_git/mrtikit/api/config/passport.js",
 		"/home/midevilworm/Desktop/recipeList.json",
 		"/home/midevilworm/_git/mrtikit/api/api/models/User.js",
@@ -192,7 +247,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -206,6 +261,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"__dirname",
+			"margin",
 			"db",
 			"backends",
 			"serializers",
