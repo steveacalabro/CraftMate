@@ -9,8 +9,12 @@
  */
 angular.module('craftMateApp')
 .controller('HomeCtrl', function ($scope, $http, $filter) {
+	$scope.bookmarks = [];
+	$scope.history = []
 	$scope.recipes = [];
 	$scope.searchText;
+
+	$scope.recipe = {};
 
 
 	//Recipe Stuff
@@ -42,15 +46,23 @@ angular.module('craftMateApp')
 		console.log("Bookmark Clicked" + index);
 	}
 
+	$scope.goToHistory = function(index) {
+		console.log("History Clicked" + index);
+	}
+
     $scope.querySearch = function(query) {
     	var lowercaseQuery = angular.lowercase(query);
 		var results = $filter('filter')($scope.recipes, { name: query });
 
-		console.log(results);
+		//console.log(results);
 		return results;
     }
 
     $scope.addToHistory = function() {
+    	if($scope.recipe.name && $scope.recipe.name != "") {
+    		$scope.history.unshift({id: $scope.history.length -1, recipe: $scope.recipe});
+    	}
+    	
     	$scope.searchText = '';
  
 		$scope.outputImage = null;
@@ -72,7 +84,8 @@ angular.module('craftMateApp')
 
     $scope.selectedItemChange = function(recipe) {
     	if(recipe) {
-    		console.log(recipe);
+    		//console.log(recipe);
+    		$scope.recipe = recipe;
 
     		$scope.recipeName = recipe.name;
     		$scope.stackSize = recipe.stackSize;

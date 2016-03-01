@@ -14,7 +14,8 @@ angular.module('craftMateApp', [
     'ngResource',
     'ngRoute',
     'ngMaterial',
-    'ui.router'
+    'ui.router',
+    'angularUtils.directives.dirPagination'
   ]).config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider.state('app', {
         url: "/",
