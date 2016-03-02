@@ -1,3 +1,6 @@
+.homePage .hidden {
+  display: none;
+}
 .homePage .craftingTable {
   margin-left: auto;
   margin-right: auto;
@@ -68,6 +71,32 @@
 .homePage md-tabs {
   margin-top: 30px;
   background: white;
+}
+.homePage md-tab-content .pages a {
+  color: rgba(0, 0, 0, 0.54);
+}
+.homePage md-tab-content .pages a.disabled {
+  cursor: default;
+  color: #ccc;
+}
+.homePage md-tab-content .pages ul {
+  padding: 0;
+}
+.homePage md-tab-content .pages .leftArrow {
+  float: left;
+  width: 33.3%;
+  list-style: none;
+}
+.homePage md-tab-content .pages .rightArrow {
+  float: right;
+  width: 33.3%;
+  text-align: right;
+  list-style: none;
+}
+.homePage md-tab-content .pages .range-label {
+  float: left;
+  width: 33.3%;
+  text-align: center;
 }
 body {
   background: url('../images/bg.jpg');
