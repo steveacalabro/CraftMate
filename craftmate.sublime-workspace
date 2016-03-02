@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"book",
+				"bookmarks"
+			],
+			[
+				"CON",
+				"console"
+			],
+			[
 				"reci",
 				"recipe"
 			],
@@ -83,7 +91,7 @@
 			"file": "webApp/app/scripts/controllers/home.js",
 			"settings":
 			{
-				"buffer_size": 2598,
+				"buffer_size": 6500,
 				"line_ending": "Unix"
 			}
 		},
@@ -91,23 +99,15 @@
 			"file": "webApp/app/views/home.html",
 			"settings":
 			{
-				"buffer_size": 4127,
+				"buffer_size": 4840,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "webApp/app/recipeList.json",
+			"file": "webApp/less/pages/home.less",
 			"settings":
 			{
-				"buffer_size": 236104,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "webApp/app/scripts/app.js",
-			"settings":
-			{
-				"buffer_size": 1185,
+				"buffer_size": 2620,
 				"line_ending": "Unix"
 			}
 		},
@@ -115,7 +115,15 @@
 			"file": "webApp/app/index.html",
 			"settings":
 			{
-				"buffer_size": 2127,
+				"buffer_size": 2610,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "webApp/app/scripts/app.js",
+			"settings":
+			{
+				"buffer_size": 1185,
 				"line_ending": "Unix"
 			}
 		}
@@ -155,19 +163,28 @@
 		"/home/midevilworm/_git/CraftMate",
 		"/home/midevilworm/_git/CraftMate/webApp",
 		"/home/midevilworm/_git/CraftMate/webApp/app",
-		"/home/midevilworm/_git/CraftMate/webApp/app/lib",
-		"/home/midevilworm/_git/CraftMate/webApp/app/lib/angularUtils-pagination"
+		"/home/midevilworm/_git/CraftMate/webApp/app/scripts/controllers",
+		"/home/midevilworm/_git/CraftMate/webApp/app/views",
+		"/home/midevilworm/_git/CraftMate/webApp/less",
+		"/home/midevilworm/_git/CraftMate/webApp/less/pages"
 	],
 	"file_history":
 	[
+		"/home/midevilworm/_git/CraftMate/webApp/bower.json",
+		"/home/midevilworm/_git/CraftMate/webApp/app/scripts/app.js",
+		"/home/midevilworm/_git/CraftMate/webApp/app/index.html",
 		"/home/midevilworm/_git/CraftMate/webApp/app/recipeList.json",
+		"/home/midevilworm/_git/CraftMate/webApp/less/pages/home.less",
+		"/home/midevilworm/_git/CraftMate/webApp/app/views/home.html",
+		"/home/midevilworm/_git/CraftMate/webApp/app/scripts/controllers/home.js",
+		"/home/midevilworm/_git/CraftMate/index.html",
+		"/home/midevilworm/_git/CraftMate/webApp/app/views/bookmarksPage.tpl.html",
+		"/home/midevilworm/_git/CraftMate/webApp/app/views/dirPagination.tpl.html",
 		"/home/midevilworm/_git/CraftMate/main.js",
 		"/home/midevilworm/_git/CraftMate/package.json",
 		"/home/midevilworm/_git/CraftMate/electronBuild.sh",
 		"/home/midevilworm/_git/CraftMate/webApp/app/styles/mainStyleFixed.css",
-		"/home/midevilworm/_git/CraftMate/webApp/app/index.html",
 		"/home/midevilworm/_git/CraftMate/webApp/less/main.less",
-		"/home/midevilworm/_git/CraftMate/webApp/less/pages/home.less",
 		"/home/midevilworm/_git/CraftMate/less/main.less",
 		"/home/midevilworm/_git/CraftMate/less/pages/home.less",
 		"/home/midevilworm/_git/CraftMate/app/scripts/controllers/home.js",
@@ -280,12 +297,7 @@
 		"/home/midevilworm/_git/StudyTreeWeb/institution/app/scripts/controllers/home.js",
 		"/home/midevilworm/_git/StudyTreeWeb/institution/less/pages/activities.less",
 		"/home/midevilworm/_git/StudyTreeWeb/institution/less/partials/header.less",
-		"/home/midevilworm/_git/StudyTreeWeb/institution/app/scripts/controllers/login.js",
-		"/home/midevilworm/_git/StudyTreeWeb/institution/app/scripts/controllers/main.js",
-		"/home/midevilworm/_git/StudyTreeWeb/institution/app/scripts/controllers/profile.js",
-		"/home/midevilworm/_git/StudyTreeWeb/institution/app/scripts/controllers/tutor.js",
-		"/home/midevilworm/_git/StudyTreeWeb/institution/app/scripts/controllers/tutors.js",
-		"/home/midevilworm/_git/StudyTreeWeb/institution/app/views/main.html"
+		"/home/midevilworm/_git/StudyTreeWeb/institution/app/scripts/controllers/login.js"
 	],
 	"find":
 	{
@@ -303,6 +315,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console",
+			"indexOf",
+			"range2",
+			"display",
+			"}*/\n",
+			"console.log('Go history' + index);\n		//clear first\n		for(var i = 0; i < 3; i ++) {\n			for(var j = 0; j < 3; j++) {\n				$scope.inputImages[i][j] = 'display: none;';\n			}\n		}\n\n		$scope.recipeMap = new Array(3);\n		for(var i = 0; i < 3; i++) {\n			$scope.recipeMap[i] = new Array(3);\n		}\n\n		console.log('Go history');\n		var recipe = $scope.history[index].recipe;\n		$scope.recipe = recipe;\n\n		$scope.recipeName = recipe.name;\n		$scope.stackSize = recipe.stackSize;\n		$scope.recipeMap = recipe.recipeMap;\n		$scope.inputImages = recipe.inputImages;\n\n		for(var i = 0; i < 3; i++) {\n			for(var j = 0; j < 3; j++) {\n				if($scope.inputImages[i][j] == \"\") {\n					$scope.inputImages[i][j] = 'display: none;';\n				}\n			}\n		}\n\n		$scope.outputHidden = \"\";\n\n		if(recipe.outputImage.includes(\"background-position\")) {\n			$scope.outputSprite = recipe.outputImage;\n		} else {\n			$scope.outputImage = recipe.outputImage;\n		}",
 			"console.",
 			"console",
 			"__dirname",
@@ -334,7 +352,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -343,26 +361,27 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2598,
+						"buffer_size": 6500,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								576,
-								576
+								2095,
+								2095
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 319.0,
+						"translation.y": 1024.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -371,15 +390,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4127,
+						"buffer_size": 4840,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3383,
-								3383
+								4338,
+								4338
 							]
 						],
 						"settings":
@@ -388,87 +407,56 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 60.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "webApp/app/recipeList.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 236104,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1224,
-								1224
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 712.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "webApp/app/scripts/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1185,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								794,
-								794
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1530.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "webApp/app/index.html",
+					"buffer": 2,
+					"file": "webApp/less/pages/home.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2127,
+						"buffer_size": 2620,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								721,
-								721
+								2620,
+								2620
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 1755.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "webApp/app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2610,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								462,
+								462
 							]
 						],
 						"settings":
@@ -482,6 +470,36 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "webApp/app/scripts/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								444,
+								444
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
