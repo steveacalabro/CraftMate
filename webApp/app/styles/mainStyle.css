@@ -114,6 +114,9 @@
   color: grey;
   cursor: default;
 }
+md-dialog {
+  color: #000!important;
+}
 body {
   background: url('../images/bg.jpg');
   background-size: 50%;

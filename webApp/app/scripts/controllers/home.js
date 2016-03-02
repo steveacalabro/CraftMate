@@ -8,7 +8,7 @@
  * Controller of the craftMateApp
  */
 angular.module('craftMateApp')
-.controller('HomeCtrl', function ($scope, $http, $filter, $timeout, $rootScope, $cookieStore, $mdToast) {
+.controller('HomeCtrl', function ($scope, $http, $filter, $timeout, $rootScope, $cookieStore, $mdToast, $mdDialog) {
 	$scope.bookmarks = $cookieStore.get('bookmarks');
 	if(!$scope.bookmarks) {
 		$scope.bookmarks = [];
@@ -95,6 +95,24 @@ angular.module('craftMateApp')
 		} else {
 			$scope.outputImage = recipe.outputImage;
 		}
+	}
+
+	$scope.removeBookmark = function(index) {
+		var confirm = $mdDialog.confirm()
+	          .title('Would you like to delete your bookmark?')
+	          .textContent('You will have to re add it if you want to bookmark it again.')
+	          .ariaLabel('Remove Bookmark')
+	          .ok('Remove')
+	          .cancel('Keep Bookmark');
+
+	    $mdDialog.show(confirm).then(function() {
+	     	//console.log("bookmark removed");
+	     	$scope.bookmarks.splice(index, 1);
+	     	$cookieStore.put('bookmarks', $scope.bookmarks);
+	     	$mdToast.show($mdToast.simple({position: "top right"}).textContent('Bookmark Removed'));
+	    }, function() {
+	    	//console.log("bookmark kept");
+	    });
 	}
 
 	$scope.pageChangeHandler = function (num) {
