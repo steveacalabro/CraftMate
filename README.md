@@ -25,3 +25,9 @@ Run `grunt` for building. This will also start a live reload server so you can t
 ### Electron
 
 I have included electron.io which allows the application to deployed to desktops in this project, but I have not speant much time getting it production ready. I was more or less playing around with some new things. If you want more information on it create an issue and I will take a look at it. 
+
+## Recipe Data
+
+The recipe data was obtained using a script that I have created to parse the minecraft wiki. Some of the items there are a little messed up. If you have a better way of getting the recipe data please let me know. I'm not sure how to improve it other than manually going through and fixing the items in the .json file.
+
+Additionally, the current .json does not link the items with an item id. I plan to implement this as part of issue [#2](/../../issues/2)
