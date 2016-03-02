@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/steveacalabro/CraftMate/master/icon.png" alt="Sublime's custom image"/>
+</p>
+# CraftMate
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -10,11 +15,6 @@
 - [Recipe Data](#recipe-data)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/steveacalabro/CraftMate/master/icon.png" alt="Sublime's custom image"/>
-</p>
-# CraftMate
 
 CraftMate is a Minecraft crafting tool created for a school project. I've decided to share it so that people may use it if they feel like it. Currently there are a few updates in the pipeline for improvement but if you have any ideas feel free to make a PR and I will review it. 
 
