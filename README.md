@@ -1,3 +1,16 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Web Demo](#web-demo)
+- [Devlopment](#devlopment)
+  - [Setup](#setup)
+  - [Building/starting the app](#buildingstarting-the-app)
+  - [Electron](#electron)
+- [Recipe Data](#recipe-data)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/steveacalabro/CraftMate/master/icon.png" alt="Sublime's custom image"/>
 </p>
