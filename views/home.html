@@ -87,58 +87,54 @@
 			</div>
 		</div>
 	</div>
-	<div flex>
-		<md-autocomplete 
-			md-selected-item="selectedItem" 
-			md-search-text="searchText"
-			md-item-text="recipe.name" 
-			placeholder='Type recipe name'
-          	md-items="recipe in querySearch(searchText)"
-          	md-item-text="recipe.name"
-          	md-min-length="0"
-          	ng-click="addToHistory()"
-          	md-selected-item-change="selectedItemChange(recipe)"
-          	>
-			<md-item-template>
-				<span md-highlight-text="searchText" md-highlight-flags="^i">{{recipe.name}}</span>
-			</md-item-template>
-			<md-not-found>
-				No matches found.
-			</md-not-found>
-		</md-autocomplete>
+	<div flex layout='row'>
+		<div flex='90'>
+			<md-autocomplete 
+				md-selected-item="selectedItem" 
+				md-search-text="searchText"
+				md-item-text="recipe.name" 
+				placeholder='Type recipe name'
+	          	md-items="recipe in querySearch(searchText)"
+	          	md-item-text="recipe.name"
+	          	md-min-length="0"
+	          	ng-click="addToHistory()"
+	          	md-selected-item-change="selectedItemChange(recipe)"
+	          	>
+				<md-item-template>
+					<span md-highlight-text="searchText" md-highlight-flags="^i">{{recipe.name}}</span>
+				</md-item-template>
+				<md-not-found>
+					No matches found.
+				</md-not-found>
+			</md-autocomplete>
+		</div>
+		<div flex>
+			<i class="fa {{bookmark}} bookmark" ng-show='searchText' ng-click='addToBookmark()'></i>
+			<i class="fa fa-star-o bookmark disabled" ng-show='!searchText'></i>
+		</div>
     </div>
 	<div flex>
 		<md-tabs md-dynamic-height md-border-bottom>
 			<md-tab label="History">
 				<md-content class="md-padding">
 					<md-list>
-					 	<md-list-item dir-paginate="recipe in history | itemsPerPage: 5" ng-click="goToHistory($index)">{{ recipe.recipe.name }}</md-list-item>
+					 	<md-list-item dir-paginate="recipe in history | itemsPerPage: 5" ng-click="goToHistory($index)" pagination-id="history">{{ recipe.recipe.name }}</md-list-item>
 						<md-list-item ng-show='!history.length'>
 							<p>No History</p>
 						</md-list-item>
 					</md-list>
-					<dir-pagination-controls boundary-links="true" template-url="views/dirPagination.tpl.html" on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+					<dir-pagination-controls boundary-links="true" template-url="views/dirPagination.tpl.html" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="history"></dir-pagination-controls>
 				</md-content>
 			</md-tab>
 			<md-tab label="Bookmarks">
 				<md-content class="md-padding">
 					<md-list>
-						<md-list-item>
-							<p>Recipe 1</p>
-						</md-list-item>
-						<md-list-item>
-							<p>Recipe 2</p>
-						</md-list-item>
-						<md-list-item>
-							<p>Recipe 3</p>
-						</md-list-item>
-						<md-list-item>
-							<p>Recipe 4</p>
-						</md-list-item>
-						<md-list-item>
-							<p>Recipe 5</p>
+					 	<md-list-item dir-paginate="recipe in bookmarks | itemsPerPage: 5" ng-click="goToBookmark($index)" pagination-id="bookmarks">{{ recipe.name }}</md-list-item>
+						<md-list-item ng-show='!bookmarks.length'>
+							<p>No History</p>
 						</md-list-item>
 					</md-list>
+					<dir-pagination-controls boundary-links="true" template-url="views/dirPagination.tpl.html" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="bookmarks"></dir-pagination-controls>
 				</md-content>
 			</md-tab>
 		</md-tabs>

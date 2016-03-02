@@ -97,6 +97,23 @@
   width: 33.3%;
   text-align: center;
 }
+.homePage .fa-star.bookmark {
+  font-size: 24px;
+  margin-top: 37px;
+  margin-left: 15px;
+  color: gold;
+}
+.homePage .fa-star-o.bookmark {
+  font-size: 24px;
+  margin-top: 37px;
+  margin-left: 15px;
+  color: white;
+  cursor: pointer;
+}
+.homePage .fa-star-o.bookmark.disabled {
+  color: grey;
+  cursor: default;
+}
 body {
   background: url('../images/bg.jpg');
   background-size: 50%;

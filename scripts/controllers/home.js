@@ -8,8 +8,12 @@
  * Controller of the craftMateApp
  */
 angular.module('craftMateApp')
-.controller('HomeCtrl', function ($scope, $http, $filter, $timeout, $rootScope) {
-	$scope.bookmarks = [];
+.controller('HomeCtrl', function ($scope, $http, $filter, $timeout, $rootScope, $cookieStore) {
+	$scope.bookmarks = $cookieStore.get('bookmarks');
+	if(!$scope.bookmarks) {
+		$scope.bookmarks = [];
+	}
+
 	$scope.history = []
 	$scope.recipes = [];
 	$scope.searchText;
@@ -31,6 +35,7 @@ angular.module('craftMateApp')
 	$scope.outputSprite = 'display:none;';
 	$scope.stackSize;
 	$scope.recipeName;
+	$scope.bookmark = "fa-star-o";
 
 	for(var i = 0; i < 3; i++) {
 		for(var j = 0; j < 3; j++) {
@@ -44,9 +49,47 @@ angular.module('craftMateApp')
         $scope.recipes = response;
     });
 
+	$scope.addToBookmark = function() {
+		if($scope.recipe.name) {
+	    	if($scope.recipe.name && $scope.recipe.name != "") {
+	    		if($scope.bookmarks.length > 0) {
+	    			if($scope.bookmarks.indexOf($scope.recipe) < 0) {
+	    				$scope.bookmarks.unshift($scope.recipe);
+	    			}
+	    		} else {
+	    			$scope.bookmarks.unshift($scope.recipe);
+	    		}
+	    	}
+	    	
+	    	$cookieStore.put('bookmarks', $scope.bookmarks);
+			$scope.bookmark = "fa-star";
+		}
+	}
 
 	$scope.goToBookmark = function(index) {
-		console.log("Bookmark Clicked" + index);
+		index = index + ($scope.page * 5);
+		//console.log('Go history' + index);
+		var recipe = $scope.bookmarks[index];
+		$scope.recipe = recipe;
+
+		$scope.searchText = recipe.name;
+		$scope.recipeName = recipe.name;
+		$scope.stackSize = recipe.stackSize;
+		$scope.recipeMap = recipe.recipeMap;
+
+		if($scope.bookmarks.indexOf(recipe) > -1) {
+			$scope.bookmark = "fa-star";
+		} else {
+			$scope.bookmark = "fa-star-o";
+		}
+
+		$scope.inputImages = recipe.inputImages;
+		
+		if(recipe.outputImage.includes("background-position")) {
+			$scope.outputSprite = recipe.outputImage;
+		} else {
+			$scope.outputImage = recipe.outputImage;
+		}
 	}
 
 	$scope.pageChangeHandler = function (num) {
@@ -59,9 +102,16 @@ angular.module('craftMateApp')
 		var recipe = $scope.history[index].recipe;
 		$scope.recipe = recipe;
 
+		$scope.searchText = recipe.name;
 		$scope.recipeName = recipe.name;
 		$scope.stackSize = recipe.stackSize;
 		$scope.recipeMap = recipe.recipeMap;
+
+		if($scope.bookmarks.indexOf(recipe) > -1) {
+			$scope.bookmark = "fa-star";
+		} else {
+			$scope.bookmark = "fa-star-o";
+		}
 
 		$scope.inputImages = recipe.inputImages;
 		
@@ -97,6 +147,7 @@ angular.module('craftMateApp')
 	    	$scope.searchText = '';
 			$scope.stackSize = null;
 			$scope.recipeName = null;
+			$scope.bookmark = "fa-star-o";
 
 			$scope.inputImages = new Array(3);
 			for(var i = 0; i < 3; i++) {
@@ -135,6 +186,12 @@ angular.module('craftMateApp')
     		} else {
     			$scope.outputImage = recipe.outputImage;
     		}
+
+    		if($scope.bookmarks.indexOf(recipe) > -1) {
+				$scope.bookmark = "fa-star";
+			} else {
+				$scope.bookmark = "fa-star-o";
+			}
     	}
     }
 
