@@ -1,4 +1,6 @@
-<center>![CraftMate](https://raw.githubusercontent.com/steveacalabro/CraftMate/master/icon.png)</center>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/steveacalabro/CraftMate/master/icon.png" alt="Sublime's custom image"/>
+</p>
 # CraftMate
 
 CraftMate is a Minecraft crafting tool created for a school project. I've decided to share it so that people may use it if they feel like it. Currently there are a few updates in the pipeline for improvement but if you have any ideas feel free to make a PR and I will review it. 
