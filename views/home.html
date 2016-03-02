@@ -129,7 +129,12 @@
 			<md-tab label="Bookmarks">
 				<md-content class="md-padding">
 					<md-list>
-					 	<md-list-item dir-paginate="recipe in bookmarks | itemsPerPage: 5" ng-click="goToBookmark($index)" pagination-id="bookmarks">{{ recipe.name }}</md-list-item>
+					 	<md-list-item dir-paginate="recipe in bookmarks | itemsPerPage: 5" ng-click="goToBookmark($index)" pagination-id="bookmarks">
+					 		{{ recipe.name }}
+					 		<md-icon ng-click="removeBookmark($index)" aria-label="Remove Bookmark" class="md-secondary">
+					 			<i class="fa fa-trash"></i>
+					 		</md-icon>
+					 	</md-list-item>
 						<md-list-item ng-show='!bookmarks.length'>
 							<p>No History</p>
 						</md-list-item>
