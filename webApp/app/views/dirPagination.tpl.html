@@ -1,0 +1,9 @@
+<div class='pages'>
+    <a href="" title="Previous page" class='leftArrow' ng-class="{ disabled : pagination.current == 1 }" ng-click="setCurrent(pagination.current - 1)">
+        <i class="fa fa-chevron-left"></i>
+    </a>
+    <div class="range-label">{{ range.lower }} - {{ range.upper }} of {{ range.total }}</div>
+    <a href="" title="Next page" class='rightArrow' ng-class="{ disabled : pagination.current == pagination.last }" ng-click="setCurrent(pagination.current + 1)">
+        <i class="fa fa-chevron-right"></i>
+    </a>
+</div>

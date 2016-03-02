@@ -1,4 +1,7 @@
 .homePage {
+	.hidden {
+		display: none;
+	}
 	.craftingTable {
 		margin-left: auto;
     	margin-right: auto;
@@ -78,5 +81,37 @@
 	md-tabs {
 		margin-top: 30px;
 		background: white;
+	}
+
+
+	md-tab-content {
+		.pages {
+	        a {
+	            color: rgba(0, 0, 0, 0.54);
+	            &.disabled {
+	                cursor: default;
+	                color: #ccc;
+	            }
+	        }
+	        ul {
+	            padding: 0;
+	        }
+	        .leftArrow {
+	            float: left;
+	            width: 33.3%;
+	            list-style: none;
+	        }
+	        .rightArrow {
+	            float: right;
+	            width: 33.3%;
+	            text-align: right;
+	            list-style: none;
+	        }
+	        .range-label {
+	            float: left;
+	            width: 33.3%;
+	            text-align: center;
+	        }
+	    }
 	}
 }
