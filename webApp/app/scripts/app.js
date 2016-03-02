@@ -15,7 +15,8 @@ angular.module('craftMateApp', [
     'ngRoute',
     'ngMaterial',
     'ui.router',
-    'angularUtils.directives.dirPagination'
+    'angularUtils.directives.dirPagination',
+    'atomic-notify'
   ]).config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider.state('app', {
         url: "/",

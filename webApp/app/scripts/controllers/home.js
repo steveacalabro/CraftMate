@@ -8,7 +8,7 @@
  * Controller of the craftMateApp
  */
 angular.module('craftMateApp')
-.controller('HomeCtrl', function ($scope, $http, $filter, $timeout, $rootScope, $cookieStore) {
+.controller('HomeCtrl', function ($scope, $http, $filter, $timeout, $rootScope, $cookieStore, $mdToast) {
 	$scope.bookmarks = $cookieStore.get('bookmarks');
 	if(!$scope.bookmarks) {
 		$scope.bookmarks = [];
@@ -55,14 +55,19 @@ angular.module('craftMateApp')
 	    		if($scope.bookmarks.length > 0) {
 	    			if($scope.bookmarks.indexOf($scope.recipe) < 0) {
 	    				$scope.bookmarks.unshift($scope.recipe);
+	    				$cookieStore.put('bookmarks', $scope.bookmarks);
+						$scope.bookmark = "fa-star";
+
+						$mdToast.show($mdToast.simple({position: "top right"}).textContent('Bookmark Added!'));;
 	    			}
 	    		} else {
 	    			$scope.bookmarks.unshift($scope.recipe);
+	    			$cookieStore.put('bookmarks', $scope.bookmarks);
+					$scope.bookmark = "fa-star";
+
+					$mdToast.show($mdToast.simple({position: "top right"}).textContent('Bookmark Added!'));
 	    		}
 	    	}
-	    	
-	    	$cookieStore.put('bookmarks', $scope.bookmarks);
-			$scope.bookmark = "fa-star";
 		}
 	}
 
@@ -77,7 +82,7 @@ angular.module('craftMateApp')
 		$scope.stackSize = recipe.stackSize;
 		$scope.recipeMap = recipe.recipeMap;
 
-		if($scope.bookmarks.indexOf(recipe) > -1) {
+		if($scope.isInBookmark($scope.recipe)) {
 			$scope.bookmark = "fa-star";
 		} else {
 			$scope.bookmark = "fa-star-o";
@@ -107,7 +112,7 @@ angular.module('craftMateApp')
 		$scope.stackSize = recipe.stackSize;
 		$scope.recipeMap = recipe.recipeMap;
 
-		if($scope.bookmarks.indexOf(recipe) > -1) {
+		if($scope.isInBookmark($scope.recipe)) {
 			$scope.bookmark = "fa-star";
 		} else {
 			$scope.bookmark = "fa-star-o";
@@ -187,12 +192,22 @@ angular.module('craftMateApp')
     			$scope.outputImage = recipe.outputImage;
     		}
 
-    		if($scope.bookmarks.indexOf(recipe) > -1) {
+    		if($scope.isInBookmark($scope.recipe)) {
 				$scope.bookmark = "fa-star";
 			} else {
 				$scope.bookmark = "fa-star-o";
 			}
     	}
+    }
+
+    $scope.isInBookmark = function(recipe) {
+    	for(var i = 0; i < $scope.bookmarks.length; i++) {
+    		if($scope.bookmarks[i].name == recipe.name) {
+    			return true;
+    		}
+    	}
+
+    	return false;
     }
 
     $scope.$watch('inputImages', function() {
