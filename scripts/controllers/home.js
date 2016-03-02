@@ -100,7 +100,7 @@ angular.module('craftMateApp')
 	$scope.removeBookmark = function(index) {
 		var confirm = $mdDialog.confirm()
 	          .title('Would you like to delete your bookmark?')
-	          .textContent('You will have to re add it if you want to bookmark it again.')
+	          .textContent('You will have to re-add it if you want to bookmark it again.')
 	          .ariaLabel('Remove Bookmark')
 	          .ok('Remove')
 	          .cancel('Keep Bookmark');
