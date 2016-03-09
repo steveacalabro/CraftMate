@@ -31,7 +31,11 @@ angular.module('craftMateApp', [
 
     $urlRouterProvider.otherwise('/');
 }).run(function ($rootScope, $state, $http, $location, $window, $timeout, $cookies) {
-    
+    $rootScope.openFork = function () {
+        var shell = require('shell');
+        event.preventDefault();
+        shell.openExternal("https://github.com/steveacalabro/CraftMate");
+    }
 })
 
 .filter('capitalize', function () {
