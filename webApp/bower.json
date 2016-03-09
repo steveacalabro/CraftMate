@@ -10,7 +10,6 @@
     "angular-sanitize": "^1.4.0",
     "angular-material": "^1.0.5",
     "font-awesome": "^4.3.x",
-    "angularUtils-pagination": "angular-utils-pagination#^0.11.0",
     "angular-ui-router": "^0.2.18"
   },
   "devDependencies": {
