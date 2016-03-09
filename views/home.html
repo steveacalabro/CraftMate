@@ -118,8 +118,8 @@
 			<md-tab label="History">
 				<md-content class="md-padding">
 					<md-list>
-                        <md-list-item ng-repeat="recipe in history| limit: 5" ng-click="goToHistory($index)">{{ recipe.recipe.name }}</md-list-item>
-					 	<!--<md-list-item dir-paginate="recipe in history | itemsPerPage: 5" ng-click="goToHistory($index)" pagination-id="history">{{ recipe.recipe.name }}</md-list-item>-->
+                        <!--<md-list-item ng-repeat="recipe in history| limit: 5" ng-click="goToHistory($index)">{{ recipe.recipe.name }}</md-list-item>-->
+					 	<md-list-item dir-paginate="recipe in history | itemsPerPage: 5" ng-click="goToHistory($index)" pagination-id="history">{{ recipe.recipe.name }}</md-list-item>
 						<md-list-item ng-show='!history.length'>
 							<p>No History</p>
 						</md-list-item>
