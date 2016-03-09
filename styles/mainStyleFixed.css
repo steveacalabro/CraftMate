@@ -115,6 +115,9 @@
   color: grey;
   cursor: default;
 }
+.homePage .range-label .hidden {
+  display: none;
+}
 md-dialog {
   color: #000!important;
 }

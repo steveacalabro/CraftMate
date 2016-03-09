@@ -17,11 +17,36 @@ angular.module('craftMateApp')
 	$scope.history = []
 	$scope.recipes = [];
 	$scope.searchText;
-	$scope.page = 0;
-
-	$scope.recipe = {};
-
-
+    $scope.recipe = {};
+    
+    //Pagination stuff
+    $scope.currentHistoryPage = 0;
+    $scope.currentBookmarkPage = 0;
+    $scope.pageSize = 5;
+    $scope.qH = '';
+    $scope.qB = '';
+    
+    $scope.getHistory = function () {
+      // needed for the pagination calc
+      // https://docs.angularjs.org/api/ng/filter/filter
+      return $filter('filter')($scope.history, $scope.qH)
+    }
+    
+    $scope.numberOfHistoryPages=function(){
+        return Math.ceil($scope.getHistory().length/$scope.pageSize);                
+    }
+    
+    $scope.getBookmarks = function () {
+      // needed for the pagination calc
+      // https://docs.angularjs.org/api/ng/filter/filter
+      return $filter('filter')($scope.bookmarks, $scope.qB)
+    }
+    
+    $scope.numberOfBookmarkPages=function(){
+        return Math.ceil($scope.getBookmarks().length/$scope.pageSize);                
+    }
+	//End Pagination
+    
 	//Recipe Stuff
 	$scope.recipeMap = new Array(3);
 	for(var i = 0; i < 3; i++) {
@@ -237,4 +262,9 @@ angular.module('craftMateApp')
 			}
 		}
     });
+}).filter('startFrom', function() {
+    return function(input, start) {
+        start = +start; //parse to int
+        return input.slice(start);
+    }
 });
