@@ -44,9 +44,9 @@ angular.module('craftMateApp')
         }
 
         $scope.numberOfBookmarkPages = function () {
-            return Math.ceil($scope.getBookmarks().length / $scope.pageSize);
-        }
-        //End Pagination
+                return Math.ceil($scope.getBookmarks().length / $scope.pageSize);
+            }
+            //End Pagination
 
         //Recipe Stuff
         $scope.recipeMap = new Array(3);
@@ -57,7 +57,7 @@ angular.module('craftMateApp')
         for (var i = 0; i < 3; i++) {
             $scope.inputImages[i] = new Array(3);
         }
-    
+
         $scope.outputImage;
         $scope.outputSprite = 'display:none;';
         $scope.stackSize;
@@ -107,9 +107,9 @@ angular.module('craftMateApp')
         }
 
         $scope.goToBookmark = function (index) {
-            index = index + ($scope.page * 5);
-            //console.log('Go history' + index);
+            index = index + ($scope.currentBookmarkPage * 5);
             var recipe = $scope.bookmarks[index];
+           
             $scope.recipe = recipe;
 
             $scope.searchText = recipe.name;
@@ -153,19 +153,19 @@ angular.module('craftMateApp')
         }
 
         $scope.isInBookmark = function (recipe) {
-            for (var i = 0; i < $scope.bookmarks.length; i++) {
-                if ($scope.bookmarks[i].name == recipe.name) {
-                    return true;
+                for (var i = 0; i < $scope.bookmarks.length; i++) {
+                    if ($scope.bookmarks[i].name == recipe.name) {
+                        return true;
+                    }
                 }
-            }
 
-            return false;
-        }
+                return false;
+            }
             //End Bookmark Stuff
 
         //History Stuff
         $scope.goToHistory = function (index) {
-            index = index + ($scope.page * 5);
+            index = index + ($scope.currentHistoryPage * 5);
             //console.log('Go history' + index);
             var recipe = $scope.history[index].recipe;
             $scope.recipe = recipe;
@@ -191,52 +191,52 @@ angular.module('craftMateApp')
         }
 
         $scope.addToHistory = function () {
-            if ($scope.recipe.name) {
-                if ($scope.recipe.name && $scope.recipe.name != "") {
-                    if ($scope.history.length > 0) {
-                        if ($scope.history[0].recipe.name != $scope.recipe.name) {
+                if ($scope.recipe.name) {
+                    if ($scope.recipe.name && $scope.recipe.name != "") {
+                        if ($scope.history.length > 0) {
+                            if ($scope.history[0].recipe.name != $scope.recipe.name) {
+                                $scope.history.unshift({
+                                    id: $scope.history.length - 1,
+                                    recipe: $scope.recipe
+                                });
+                            }
+                        } else {
                             $scope.history.unshift({
                                 id: $scope.history.length - 1,
                                 recipe: $scope.recipe
                             });
                         }
-                    } else {
-                        $scope.history.unshift({
-                            id: $scope.history.length - 1,
-                            recipe: $scope.recipe
-                        });
                     }
-                }
 
-                $scope.outputSprite = "display: none;";
-                $scope.outputImage = "";
-                $scope.searchText = '';
-                $scope.stackSize = null;
-                $scope.recipeName = null;
-                $scope.bookmark = "fa-star-o";
-
-                $scope.inputImages = new Array(3);
-                for (var i = 0; i < 3; i++) {
-                    $scope.inputImages[i] = new Array(3);
-                }
-
-                $scope.recipeMap = new Array(3);
-                for (var i = 0; i < 3; i++) {
-                    $scope.recipeMap[i] = new Array(3);
-                }
-
-                $timeout(function () {
                     $scope.outputSprite = "display: none;";
+                    $scope.outputImage = "";
+                    $scope.searchText = '';
                     $scope.stackSize = null;
+                    $scope.recipeName = null;
+                    $scope.bookmark = "fa-star-o";
 
                     $scope.inputImages = new Array(3);
                     for (var i = 0; i < 3; i++) {
                         $scope.inputImages[i] = new Array(3);
                     }
-                }, 10);
+
+                    $scope.recipeMap = new Array(3);
+                    for (var i = 0; i < 3; i++) {
+                        $scope.recipeMap[i] = new Array(3);
+                    }
+
+                    $timeout(function () {
+                        $scope.outputSprite = "display: none;";
+                        $scope.stackSize = null;
+
+                        $scope.inputImages = new Array(3);
+                        for (var i = 0; i < 3; i++) {
+                            $scope.inputImages[i] = new Array(3);
+                        }
+                    }, 10);
+                }
             }
-        }
-        //End History Stuff
+            //End History Stuff
 
         //Autocomplete Stuff
         $scope.querySearch = function (query) {

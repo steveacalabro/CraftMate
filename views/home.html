@@ -108,7 +108,7 @@
             <md-tab label="History">
                 <md-content class="md-padding">
                     <md-list>
-                        <md-list-item ng-repeat="recipe in history | filter:qH | startFrom:currentHistoryPage*pageSize | limitTo:pageSize">
+                        <md-list-item ng-repeat="recipe in history | filter:qH | startFrom:currentHistoryPage*pageSize | limitTo:pageSize" ng-click="goToHistory($index)">
                             {{ recipe.recipe.name }}
                         </md-list-item>
                         <md-list-item ng-show='!history.length'>
@@ -130,12 +130,14 @@
             <md-tab label="Bookmarks">
                 <md-content class="md-padding">
                     <md-list>
-                        <md-list-item ng-repeat="recipe in bookmarks | filter:qB | startFrom:currentBookmarkPage*pageSize | limitTo:pageSize">
-                            {{ recipe.name }}
-                            <md-icon ng-click="removeBookmark($index)" aria-label="Remove Bookmark" class="md-secondary">
-                                <i class="fa fa-trash"></i>
-                            </md-icon>
-                        </md-list-item>
+                        <span ng-repeat="recipe in bookmarks | filter:qB | startFrom:currentBookmarkPage*pageSize | limitTo:pageSize">
+                            <md-list-item ng-click="goToBookmark($index)">
+                                {{ recipe.name }}
+                                <md-icon ng-click="removeBookmark($index)" aria-label="Remove Bookmark" class="md-secondary">
+                                    <i class="fa fa-trash"></i>
+                                </md-icon>
+                            </md-list-item>
+                        </span>
                         <md-list-item ng-show='!bookmarks.length'>
                             <p>No Bookmarks</p>
                         </md-list-item>
