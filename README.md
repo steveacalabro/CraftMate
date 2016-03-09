@@ -29,11 +29,11 @@ This section covers some information you will need to devlop.
 
 ### Setup
 
-Run both `npm install` and `bower install` when you clone the repository.
+Run both `npm install` and `bower install` when you clone the repository. Remember to be in the `/webApp` directory as everything else is used for the elctron build.
 
 ### Building/starting the app
 
-Run `grunt` for building. This will also start a live reload server so you can test on the fly
+Run `grunt` for building. This will also start a live reload server so you can test on the fly. Remember to be in the `/webApp` directory as everything else is used for the elctron build.
 
 ### Electron
 
