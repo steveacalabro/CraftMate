@@ -118,18 +118,19 @@
 			<md-tab label="History">
 				<md-content class="md-padding">
 					<md-list>
-					 	<md-list-item dir-paginate="recipe in history | itemsPerPage: 5" ng-click="goToHistory($index)" pagination-id="history">{{ recipe.recipe.name }}</md-list-item>
+                        <md-list-item ng-repeat="recipe in history| limit: 5" ng-click="goToHistory($index)">{{ recipe.recipe.name }}</md-list-item>
+					 	<!--<md-list-item dir-paginate="recipe in history | itemsPerPage: 5" ng-click="goToHistory($index)" pagination-id="history">{{ recipe.recipe.name }}</md-list-item>-->
 						<md-list-item ng-show='!history.length'>
 							<p>No History</p>
 						</md-list-item>
 					</md-list>
-					<dir-pagination-controls boundary-links="true" template-url="views/dirPagination.tpl.html" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="history"></dir-pagination-controls>
+					<!--<dir-pagination-controls boundary-links="true" template-url="views/dirPagination.tpl.html" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="history"></dir-pagination-controls>-->
 				</md-content>
 			</md-tab>
 			<md-tab label="Bookmarks">
 				<md-content class="md-padding">
 					<md-list>
-					 	<md-list-item dir-paginate="recipe in bookmarks | itemsPerPage: 5" ng-click="goToBookmark($index)" pagination-id="bookmarks">
+					 	<md-list-item dir-paginate="recipe in bookmarks | itemsPerPage: 5" ng-click="goToBookmark($index)" pagination-id="bookmarks" total-items="bookmarks.length">
 					 		{{ recipe.name }}
 					 		<md-icon ng-click="removeBookmark($index)" aria-label="Remove Bookmark" class="md-secondary">
 					 			<i class="fa fa-trash"></i>
@@ -139,7 +140,7 @@
 							<p>No Bookmarks</p>
 						</md-list-item>
 					</md-list>
-					<dir-pagination-controls boundary-links="true" template-url="views/dirPagination.tpl.html" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="bookmarks"></dir-pagination-controls>
+					<!--<dir-pagination-controls boundary-links="true" template-url="views/dirPagination.tpl.html" on-page-change="pageChangeHandler(newPageNumber)" pagination-id="bookmarks"></dir-pagination-controls>-->
 				</md-content>
 			</md-tab>
 		</md-tabs>
